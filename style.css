@@ -1,5 +1,9 @@
+:root {
+  --darkblue: #2D2A78;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -18,11 +22,16 @@ textarea {
   background-color: aliceblue;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid var(--darkblue);
+}
+
+h1 {
+  font-weight: 700;
 }
 
 .description {
   white-space: pre-wrap;
+  border: dashed 1px black;
 }
 
 .time-block {
@@ -37,8 +46,8 @@ textarea {
 }
 
 .hour {
-  background-color: #F5F4E6;
-  color: #000000;
+  background-color: var(--darkblue);
+  color: white;
   border-top: 1px dashed #000000;
 }
 
@@ -57,12 +66,20 @@ textarea {
   color: white;
 }
 
+footer {
+  flex-shrink: 0;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  cursor: pointer;
 }
 
 .saveBtn i:hover {

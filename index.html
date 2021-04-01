@@ -4,22 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+
     <title>Work Day Scheduler</title>
   </head>
 
@@ -27,25 +23,100 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <h2>Current Time &amp; Date: <br /> <span id="time-display">00:00:00</span></h2>
+      <p id="current-date" class="lead">
+      <p id="current-time" class="lead"></p>
     </header>
-    <div class="container">
+    <main class="container">
       <!-- Timeblocks go here -->
-      <table class="table table-hover text-left">
-        <tr>
-          <thead>
-            <th>Time</th>
-            <th>To-do</th>
-            <th>Save</th>
-          </thead>
-          <tbody></tbody>
-        </tr>
-      </table>
-    </div>
+      <div class="schedule-display">
+        <div id="hour-8" class="row time-block">
+          <div class="col-md-1 hour">
+            8AM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-check-square status-icon icon-success"></i></button>
+        </div>
+        <div id="hour-9" class="row time-block">
+          <div class="col-md-1 hour">
+            9AM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-10" class="row time-block">
+          <div class="col-md-1 hour">
+            10AM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-11" class="row time-block">
+          <div class="col-md-1 hour">
+            11AM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-12" class="row time-block">
+          <div class="col-md-1 hour">
+            12PM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-13" class="row time-block">
+          <div class="col-md-1 hour">
+            1PM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-14" class="row time-block">
+          <div class="col-md-1 hour">
+            2PM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-15" class="row time-block">
+          <div class="col-md-1 hour">
+            3PM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-16" class="row time-block">
+          <div class="col-md-1 hour">
+            4PM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+        <div id="hour-17" class="row time-block">
+          <div class="col-md-1 hour">
+            5PM
+          </div>
+          <textarea class="col-md-10 description">
+          </textarea>
+          <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
+        </div>
+      </div>
+    </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  
+    <footer>
+      <h3>Time to go home! 😄</h3>
+    </footer>
+   
+  <script src="script.js"></script>
   </body>
 
  
