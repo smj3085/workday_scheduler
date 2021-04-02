@@ -1,4 +1,4 @@
-$(document).ready(function () {// tells engine to load 1)html & 2)css first.
+$(document).ready(function () {
     //display current day & time.
     var dateDisplayEl = $('#current-date');
     var timeDisplayEl = $('#current-time');
@@ -11,6 +11,7 @@ $(document).ready(function () {// tells engine to load 1)html & 2)css first.
         timeDisplayEl.text(currentTime);
     }
     
+     // set up interval to check if time needs to be updated
     setInterval(displayTime, 1000);
 
     // get description on click of save button
@@ -22,6 +23,15 @@ $(document).ready(function () {// tells engine to load 1)html & 2)css first.
 
         //set items in local storage.
         localStorage.setItem(time, text);
+    })
+
+    $(".resetBtn").on("click", function() {
+        // clear all local storage
+        localStorage.clear();
+
+        // clear all description from page
+        $(".description").val("");
+
     })
 
     // load any saved data from localStorage
@@ -36,8 +46,8 @@ $(document).ready(function () {// tells engine to load 1)html & 2)css first.
     $("#hour-16 .description").val(localStorage.getItem("hour-16"));
     $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
-    function hourUpdater() {
-        // get current number of hours
+    function trackHour() {
+        // get current number of hours using moment.js
         var currentHour = moment().hours();
 
         // loop over time blocks
@@ -47,10 +57,13 @@ $(document).ready(function () {// tells engine to load 1)html & 2)css first.
         // check if we've moved past this time
         if (blockHour < currentHour) {
             $(this).addClass("past");
+            $(this).removeClass("future");
+            $(this).removeClass("present");
         } 
         else if (blockHour === currentHour) {
             $(this).removeClass("past");
-            $(this).addClass("present");
+            $(this).addClass("present");   
+            $(this).removeClass("future");
         } 
         else {
             $(this).removeClass("past");
@@ -60,9 +73,10 @@ $(document).ready(function () {// tells engine to load 1)html & 2)css first.
         });
     }
 
-    hourUpdater();
+    trackHour();
 
+    
     // set up interval to check if current time needs to be updated
-    var interval = setInterval(hourUpdater, 15000);
+    var interval = setInterval(trackHour, 15000);
 
 })

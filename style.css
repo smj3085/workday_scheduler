@@ -23,9 +23,15 @@ textarea {
   color: black;
   border-radius: 0;
   border-bottom: 10px solid var(--darkblue);
+  padding: 20px;
+
 }
 
 h1 {
+  font-weight: 700;
+}
+
+.lead {
   font-weight: 700;
 }
 
@@ -80,6 +86,13 @@ footer {
   background-color: #06aed5;
   color: white;
   cursor: pointer;
+}
+
+.resetBtn {
+  background-color: #06aed5;
+  color: white;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .saveBtn i:hover {
